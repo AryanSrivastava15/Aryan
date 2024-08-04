@@ -43,3 +43,34 @@ function toggleMenu() {
   menuLinks.classList.toggle('open');
   icon.classList.toggle('open');
 }
+
+// cursor.js
+
+document.addEventListener('DOMContentLoaded', function () {
+  const cursor = document.getElementById('custom-cursor');
+
+  document.addEventListener('mousemove', function (e) {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+
+  document.addEventListener('mouseenter', function () {
+    cursor.style.opacity = 1;
+    cursor.classList.remove('glow'); // Remove glow on hover
+  });
+
+  document.addEventListener('mouseleave', function () {
+    cursor.style.opacity = 0;
+  });
+});
+
+// Add swirl effect on hover
+document.getElementById('swirl-container').addEventListener('mouseenter', function () {
+  const cursor = document.getElementById('custom-cursor');
+  cursor.classList.add('glow'); // Add glow on hover
+});
+
+document.getElementById('swirl-container').addEventListener('mouseleave', function () {
+  const cursor = document.getElementById('custom-cursor');
+  cursor.classList.remove('glow'); // Remove glow on hover
+});
+
